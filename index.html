@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finest Studio | Premier Web Development & Design</title>
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💎</text></svg>">
+
+    <!-- Basic SEO Meta Tags -->
+    <meta name="description"
+        content="Finest Studio is a creative agency specializing in high-performance web development, UI/UX design, and e-commerce solutions. We craft beautiful, functional, and user-centric digital experiences.">
+    <meta name="keywords"
+        content="web development, ui/ux design, e-commerce, creative agency, portfolio, web design, custom websites">
+    <link rel="canonical" href="https://www.fineststudio.com/"> <!-- Replace with your actual domain -->
+
+    <!-- Open Graph Meta Tags (for social sharing) -->
+    <meta property="og:title" content="Finest Studio | Premier Web Development & Design">
+    <meta property="og:description"
+        content="We craft beautiful, functional, and user-centric digital experiences from the future.">
+    <meta property="og:image" content="https://www.fineststudio.com/og-image.jpg">
+    <!-- Replace with a URL to an image (1200x630px recommended) -->
+    <meta property="og:url" content="https://www.fineststudio.com/"> <!-- Replace with your actual domain -->
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Finest Studio | Premier Web Development & Design">
+    <meta name="twitter:description"
+        content="We craft beautiful, functional, and user-centric digital experiences from the future.">
+    <meta name="twitter:image" content="https://www.fineststudio.com/og-image.jpg">
+    <!-- Replace with a URL to an image -->
+
+    <style>
+        :root {
+            --primary-color: #6a19ff;
+            --background-color: #0c0a1a;
+            --text-color: #f0f0f0;
+            --secondary-text-color: #a0a0b0;
+            --border-color: rgba(255, 255, 255, 0.2);
+            --card-background: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 0;
+            background-color: rgba(12, 10, 26, 0.8);
+            backdrop-filter: blur(10px);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        header.scrolled {
+            background-color: var(--background-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            padding: 0;
+            z-index: 1001;
+        }
+
+        .hamburger .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            transition: all 0.3s ease-in-out;
+            background-color: var(--text-color);
+        }
+
+        .hero {
+            position: sticky;
+            top: 0;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle, rgba(106, 25, 255, 0.2), transparent 70%);
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        #matrix-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: bold;
+            line-height: 1.1;
+            background: linear-gradient(90deg, var(--text-color), var(--primary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--secondary-text-color);
+            margin: 1rem 0 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            margin-right: 1rem;
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: #fff;
+            border-color: #25D366;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            border-color: #128C7E;
+            color: #fff;
+        }
+
+        .btn-whatsapp svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        section:not(.hero) {
+            position: relative;
+            z-index: 2;
+            padding: 6rem 0;
+            border-top: 1px solid var(--border-color);
+            opacity: 0;
+            transform: translateY(50px);
+            background-color: var(--background-color);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--secondary-text-color);
+            max-width: 600px;
+            margin: 0 auto 4rem auto;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-grid img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        #typing-heading {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            height: 2.5rem;
+        }
+
+        .services-grid,
+        .projects-grid,
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card,
+        .project-card,
+        .blog-post {
+            background-color: var(--card-background);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .blog-post {
+            cursor: pointer;
+        }
+
+        .blog-post-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .expand-icon {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .blog-post.active .expand-icon {
+            transform: rotate(45deg);
+        }
+
+        .blog-post-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding-top 0.5s ease-out;
+        }
+
+        .blog-post-content p {
+            color: var(--secondary-text-color);
+        }
+
+        .service-card {
+            position: relative;
+            overflow: hidden;
+            /* To keep the glow within the card's bounds */
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(106, 25, 255, 0.15), transparent 40%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-card>* {
+            position: relative;
+            /* Ensure content is above the glow */
+        }
+
+        .service-card:hover,
+        .project-card:hover,
+        .blog-post:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: var(--primary-color);
+        }
+
+        .service-card .icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .project-card a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .project-card img {
+            width: calc(100% + 4rem);
+            margin: -2rem -2rem 1.5rem -2rem;
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .process-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .process-step {
+            padding-left: 50px;
+            position: relative;
+        }
+
+        .process-step::before {
+            content: attr(data-step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .testimonial-slider {
+            overflow: hidden;
+            padding: 2rem 0;
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .testimonial-slider::before,
+        .testimonial-slider::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 150px;
+            height: 100%;
+            z-index: 2;
+        }
+
+        .testimonial-slider::before {
+            left: 0;
+            background: linear-gradient(to left, rgba(12, 10, 26, 0), var(--background-color));
+        }
+
+        .testimonial-slider::after {
+            right: 0;
+            background: linear-gradient(to right, rgba(12, 10, 26, 0), var(--background-color));
+        }
+
+        .testimonial-track {
+            display: inline-block;
+            animation: scroll 60s linear infinite;
+        }
+
+        .testimonial {
+            display: inline-block;
+            width: 400px;
+            /* Adjust width as needed */
+            padding: 0 2rem;
+            white-space: normal;
+            text-align: center;
+        }
+
+        .testimonial-quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .pricing-card {
+            background-color: var(--card-background);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .pricing-card.featured {
+            animation: slow-bounce 2.5s ease-in-out infinite;
+            animation-delay: 0.2s;
+        }
+
+        .pricing-card:not(.featured) {
+            animation: slow-bounce 2.5s ease-in-out infinite;
+        }
+
+        .pricing-grid .pricing-card:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .pricing-grid .pricing-card:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .pricing-card.featured {
+            transform: scale(1.05);
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 30px rgba(106, 25, 255, 0.2);
+        }
+
+        .pricing-card .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 1rem 0;
+        }
+
+        .pricing-card .price sup {
+            font-size: 1.5rem;
+        }
+
+        .pricing-card .price span {
+            font-size: 1rem;
+            color: var(--secondary-text-color);
+            display: block;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .pricing-card ul li {
+            margin-bottom: 0.75rem;
+            color: var(--secondary-text-color);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            box-sizing: border-box;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            color: var(--text-color);
+        }
+
+        footer {
+            padding: 4rem 0 2rem 0;
+            position: relative;
+            z-index: 2;
+            background-color: var(--background-color);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li a {
+            color: var(--secondary-text-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--text-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+        }
+
+        .back-to-top-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            text-decoration: none;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+        }
+
+        .back-to-top-btn.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                position: fixed;
+                right: 0;
+                top: 0;
+                flex-direction: column;
+                background-color: rgba(12, 10, 26, 0.95);
+                backdrop-filter: blur(10px);
+                width: 100%;
+                height: 100vh;
+                text-align: center;
+                transition: transform 0.3s ease-in-out;
+                transform: translateX(100%);
+                padding-top: 5rem;
+                gap: 1.5rem;
+            }
+
+            nav ul.nav-active {
+                transform: translateX(0);
+            }
+
+            nav a {
+                font-size: 1.2rem;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hamburger.is-active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.is-active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .hamburger.is-active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            .hero {
+                align-items: flex-start;
+                padding-top: 15vh;
+            }
+
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            #typing-heading {
+                min-height: 5rem;
+                /* Allow space for two lines of text */
+                height: auto;
+                /* Remove the fixed height */
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .testimonial {
+                width: 300px;
+            }
+        }
+
+        @keyframes scroll {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes slow-bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo"><a href="#">Finest Studio</a></div>
+                <ul id="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Work</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="hamburger" id="hamburger-button" aria-label="Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main id="fullpage-container">
+        <section class="hero">
+            <canvas id="matrix-canvas"></canvas>
+            <div class="container">
+                <h1>Crafting Digital Excellence, One Pixel at a Time.</h1>
+                <p>We are Finest Studio—a creative agency building beautiful, functional, and user-centric web
+                    experiences from the future.</p>
+                <a href="#projects" class="btn btn-primary">Explore Our Work</a>
+                <a href="#contact" class="btn">Start a Project</a>
+            </div>
+        </section>
+
+        <section id="about">
+
+            <div class="container">
+                <h2>About Us</h2>
+                <p class="section-subtitle">We are problem solvers at heart, fueled by a passion for exceptional web
+                    development and design.</p>
+                <div class="about-grid">
+                    <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_w51pcehl.json"
+                        background="transparent" speed="1" style="width: 100%; border-radius: 8px;" loop
+                        autoplay></lottie-player>
+                    <div>
+                        <h3 id="typing-heading"></h3>
+                        <p>Founded on the principles of innovation and quality, Finest Studio is dedicated to
+                            transforming ideas into future-ready digital realities. Our team consists of passionate
+                            developers, creative designers, and strategic thinkers who collaborate to deliver
+                            outstanding results. We believe in building strong partnerships with our clients,
+                            understanding their vision, and creating web solutions that not only meet but exceed
+                            expectations. Let's build the future of the web, together.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="container">
+                <h2>Our Services</h2>
+                <p class="section-subtitle">Launching visions, building websites. Here's how we can help you succeed
+                    online.</p>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="icon">🚀</div>
+                        <h3>Web Development</h3>
+                        <p>From marketing sites to complex web applications, we build fast, secure, and scalable
+                            solutions using the latest technologies.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon">🎨</div>
+                        <h3>UI/UX Design</h3>
+                        <p>We create intuitive and engaging user interfaces that provide a seamless user experience,
+                            ensuring your visitors stay and convert.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon">🛒</div>
+                        <h3>E-Commerce Solutions</h3>
+                        <p>Boost your online sales with a custom-built e-commerce platform or a powerful Shopify store
+                            tailored to your brand.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2>Featured Work</h2>
+                <p class="section-subtitle">Dig into our universe of projects and see the digital experiences we've
+                    brought to life.</p>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <a href="https://finestxxx.github.io/medicare/" target="_blank" rel="noopener noreferrer">
+                            <img src="images/medicare gif.gif" alt="Screenshot of a corporate website project">
+                            <h3>Medicare - Telemedicine</h3>
+                            <p>A comprehensive telemedicine platform connecting patients with healthcare professionals
+                                for virtual consultations.</p>
+                        </a>
+                    </div>
+                    <div class="project-card">
+                        <a href="https://finestxxx.github.io/verse/" target="_blank" rel="noopener noreferrer">
+                            <img src="images/verse gif.gif" alt="Screenshot of an e-commerce store project">
+                            <h3>Verse - Fashion E-commerce</h3>
+                            <p>A stylish and modern e-commerce website for a fashion brand, focusing on a seamless user
+                                and shopping experience.</p>
+                        </a>
+                    </div>
+                    <div class="project-card">
+                        <a href="https://finestxxx.github.io/fitnessweb/" target="_blank" rel="noopener noreferrer">
+                            <img src="images/fitnessweb.gif" alt="Screenshot of a web application project">
+                            <h3>FitnessWeb - Fitness Platform</h3>
+                            <p>An interactive web platform for fitness enthusiasts, offering workout plans, progress
+                                tracking, and community features.</p>
+                        </a>
+                    </div>
+                    <div class="project-card">
+                        <a href="https://finestxxx.github.io/sweetcrust/" target="_blank" rel="noopener noreferrer">
+                            <img src="images/sweetcrust gif.gif" alt="Screenshot of a portfolio website project">
+                            <h3>SweetCrust - Bakery Website</h3>
+                            <p>A delightful and visually appealing website for a local bakery, featuring an online
+                                ordering system and gallery.</p>
+                        </a>
+                    </div>
+                    <div class="project-card">
+                        <a href="https://finestxxx.github.io/lumina-eyecare/" target="_blank" rel="noopener noreferrer">
+                            <img src="images/lumina.gif" alt="Screenshot of a blog platform project">
+                            <h3>Lumina - Eyecare Hospital</h3>
+                            <p>A professional and accessible website for an eyecare hospital, providing patient
+                                information and appointment booking.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="process">
+            <div class="container">
+                <h2>Our Process</h2>
+                <p class="section-subtitle">A streamlined journey from idea to launch, ensuring transparency and
+                    excellence at every step.</p>
+                <div class="process-timeline">
+                    <div class="process-step" data-step="1">
+                        <h3>Discovery & Strategy</h3>
+                        <p>We start by understanding your goals, target audience, and project requirements to create a
+                            comprehensive plan.</p>
+                    </div>
+                    <div class="process-step" data-step="2">
+                        <h3>Design & Prototyping</h3>
+                        <p>Our design team creates wireframes and high-fidelity mockups to visualize the user experience
+                            and interface.</p>
+                    </div>
+                    <div class="process-step" data-step="3">
+                        <h3>Development & aunch</h3>
+                        <p>Our developers bring the designs to life with clean, efficient code, followed by rigorous
+                            testing and a seamless launch.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <div class="container">
+                <h2>What Our Clients Say</h2>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-track">
+                    <div class="testimonial">
+                        <p class="testimonial-quote">"Finest Studio exceeded all our expectations. Their attention to
+                            detail and commitment to our vision was truly remarkable. We couldn't be happier with our
+                            new website!"</p>
+                        <p class="testimonial-author">- Jane Doe, CEO of TechCorp</p>
+                    </div>
+                    <div class="testimonial">
+                        <p class="testimonial-quote">"The entire process was seamless, and the final product was a
+                            masterpiece. Their team is professional, creative, and incredibly skilled. Highly
+                            recommended!"</p>
+                        <p class="testimonial-author">- John Smith, Founder of Innovate Co.</p>
+                    </div>
+                    <div class="testimonial">
+                        <p class="testimonial-quote">"Working with them was a game-changer for our e-commerce business.
+                            Our conversion rates have skyrocketed since the new site launch. A fantastic partner!"</p>
+                        <p class="testimonial-author">- Emily White, Marketing Director</p>
+                    </div>
+                    <div class="testimonial">
+                        <p class="testimonial-quote">"They transformed our outdated platform into a modern, fast, and
+                            user-friendly web application. The feedback from our users has been overwhelmingly
+                            positive."</p>
+                        <p class="testimonial-author">- Michael Brown, Product Manager</p>
+                    </div>
+                    <!-- Duplicated for seamless loop -->
+                    <div class="testimonial">
+                        <p class="testimonial-quote">"Finest Studio exceeded all our expectations. Their attention to
+                            detail and commitment to our vision was truly remarkable. We couldn't be happier with our
+                            new website!"</p>
+                        <p class="testimonial-author">- Jane Doe, CEO of TechCorp</p>
+                    </div>
+                    <div class="testimonial">
+                        <p class="testimonial-quote">"The entire process was seamless, and the final product was a
+                            masterpiece. Their team is professional, creative, and incredibly skilled. Highly
+                            recommended!"</p>
+                        <p class="testimonial-author">- John Smith, Founder of Innovate Co.</p>
+                    </div>
+                    <div class="testimonial">
+                        <p class="testimonial-quote">"Working with them was a game-changer for our e-commerce business.
+                            Our conversion rates have skyrocketed since the new site launch. A fantastic partner!"</p>
+                        <p class="testimonial-author">- Emily White, Marketing Director</p>
+                    </div>
+                    <div class="testimonial">
+                        <p class="testimonial-quote">"They transformed our outdated platform into a modern, fast, and
+                            user-friendly web application. The feedback from our users has been overwhelmingly
+                            positive."</p>
+                        <p class="testimonial-author">- Michael Brown, Product Manager</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing">
+            <div class="container">
+                <h2>Affordable Starter Packs</h2>
+                <p class="section-subtitle">Everything you need to launch your idea and grow your online presence. Let's
+                    get started!</p>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3>Launchpad Pack</h3>
+                        <div class="price"><sup>$</sup>299</div>
+                        <ul>
+                            <li>✓ Single Page Website</li>
+                            <li>✓ Responsive Design</li>
+                            <li>✓ Contact Form</li>
+                            <li>✓ Fast Turnaround</li>
+                        </ul>
+                        <a href="#contact" class="btn">Get Started</a>
+                    </div>
+                    <div class="pricing-card featured">
+                        <h3>Growth Pack</h3>
+                        <div class="price"><sup>$</sup>599</div>
+                        <ul>
+                            <li>✓ Up to 5 Pages</li>
+                            <li>✓ Premium Template Design</li>
+                            <li>✓ Basic SEO Included</li>
+                            <li>✓ Limited Revisions</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary">Get Started</a>
+                    </div>
+                    <div class="pricing-card">
+                        <h3>Scale Pack</h3>
+                        <div class="price"><sup>$</sup>999<sup>+</sup></div>
+                        <ul>
+                            <li>✓ Fully Custom Design</li>
+                            <li>✓ E-commerce Features</li>
+                            <li>✓ Advanced Integrations</li>
+                            <li>✓ Dedicated Support</li>
+                        </ul>
+                        <a href="#contact" class="btn">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog">
+            <div class="container">
+                <h2>Our Insights</h2>
+                <p class="section-subtitle">Stay updated with the latest trends, tips, and insights from the world of
+                    web development and design.</p>
+                <div class="blog-grid">
+                    <div class="blog-post" role="button" tabindex="0">
+                        <div class="blog-post-header">
+                            <div>
+                                <h3>The Future of Web Design in 2025</h3>
+                                <p>Explore the emerging trends that are shaping the future of digital experiences.</p>
+                            </div>
+                            <span class="expand-icon">+</span>
+                        </div>
+                        <div class="blog-post-content">
+                            <p>In 2025, web design is moving towards more immersive and personalized experiences. Key
+                                trends include the rise of AI-driven design, advanced micro-interactions, and a focus on
+                                accessibility and sustainability. We're also seeing a resurgence of brutalist and
+                                minimalist aesthetics, proving that bold simplicity and raw functionality are as
+                                powerful as ever. Staying ahead means embracing these changes to create websites that
+                                are not only beautiful but also intelligent and inclusive.</p>
+                        </div>
+                    </div>
+                    <div class="blog-post" role="button" tabindex="0">
+                        <div class="blog-post-header">
+                            <div>
+                                <h3>Why Your Business Needs a High-Performance Website</h3>
+                                <p>Learn how a fast and optimized website can significantly boost your engagement and
+                                    conversion rates.</p>
+                            </div>
+                            <span class="expand-icon">+</span>
+                        </div>
+                        <div class="blog-post-content">
+                            <p>In today's digital marketplace, speed is everything. A high-performance website directly
+                                impacts user experience, SEO rankings, and conversion rates. A delay of just one second
+                                can lead to a significant drop in customer satisfaction. We focus on optimized code,
+                                efficient asset loading, and powerful server infrastructure to ensure your site is not
+                                just fast, but exceptionally responsive, providing a seamless experience that keeps
+                                users engaged and turns visitors into customers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Got a project? Let's talk.</h2>
+                <p class="section-subtitle">Get your space suit ready and tell us your ideas to develop your dream web
+                    solution.</p>
+                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" id="contact-form">
+                    <input type="hidden" name="access_key" value="3f78f5d8-335d-4348-bebd-0644d0daa6e8">
+                    <input type="hidden" name="subject" value="New Contact Form Submission from Finest Studio">
+                    <input type="hidden" name="from_name" value="Finest Studio Portfolio">
+
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">How can we help you?</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <a href="https://wa.me/2348135880354?text=hi%2C%20i%20need%20your%20services" target="_blank"
+                            class="btn btn-whatsapp">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <path
+                                    d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 439.6c-33.8 0-66.3-13.1-90.4-36.4l-6.4-3.8-67.1 17.6-17.8-67.8-4.1-6.7c-24.9-40.5-39.7-88.8-39.7-139.8 0-109.9 89.5-199.5 199.8-199.5 52.4 0 101.3 20.5 138.2 57.4 36.9 36.9 57.3 85.8 57.3 138.2-.1 109.9-89.5 199.5-199.8 199.5zM319.2 284.4c-11.2-5.6-66.4-32.8-76.7-36.6-10.3-3.8-17.7-5.6-25.1 5.6-7.4 11.2-29.1 36.6-35.6 43.9-6.5 7.4-13 8.4-24.2 2.8-11.2-5.6-47.1-17.4-89.6-55.1-33.1-29.5-55.4-65.8-61.9-77-6.5-11.2-.7-17.2 5-22.8 5.6-5.6 11.2-13.1 16.8-19.7 5.6-6.5 7.4-11.2 11.2-18.6 3.8-7.4 1.9-13.9-1.9-19.5-3.8-5.6-25.1-60.4-34.4-82.5-9.1-22.1-18.3-19-25.1-19.2-6.5-.2-13.9-.2-21.3-.2-7.4 0-19.5 2.8-29.1 14-9.6 11.2-36.6 35.6-36.6 89.5 0 53.9 37.5 103.7 42.7 111.1 5.2 7.4 74.2 118.5 181.4 160.3 26.5 10.2 47.1 16.2 62.8 20.8 15.6 4.6 29.9 3.8 41.1-1.9 12.1-6.5 36.6-29.9 41.9-58.3 5.2-28.4 5.2-52.8 3.8-58.3-1.4-5.6-12.1-10.2-24.2-15.6z" />
+                            </svg>
+                            Chat on WhatsApp
+                        </a>
+                    </div>
+                    <div id="form-result" style="margin-top: 1rem;"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Finest Studio</h4>
+                    <p>Crafting Digital Excellence.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#projects">Work</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <ul>
+                        <li><a href="https://www.instagram.com/finestxxx/">Instagram</a></li>
+                        <li><a href="https://github.com/finestxxx">Github</a></li>
+
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <p>finest3plex@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Finest Studio. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" id="back-to-top-btn" class="back-to-top-btn" aria-label="Back to top">↑</a>
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <script>
+        const typingHeading = document.getElementById('typing-heading');
+        if (typingHeading) {
+            const roles = ["Web Developers", "UI/UX Designers", "Problem Solvers", "Creative Coders"];
+            let roleIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+
+            function type() {
+                const currentRole = roles[roleIndex];
+                if (isDeleting) {
+                    typingHeading.textContent = currentRole.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    typingHeading.textContent = currentRole.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+
+                if (!isDeleting && charIndex === currentRole.length) {
+                    isDeleting = true;
+                    setTimeout(type, 2000);
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    roleIndex = (roleIndex + 1) % roles.length;
+                    setTimeout(type, 500);
+                } else {
+                    setTimeout(type, isDeleting ? 100 : 150);
+                }
+            }
+            document.addEventListener('DOMContentLoaded', type);
+        }
+
+        const hamburger = document.getElementById('hamburger-button');
+        const navLinks = document.getElementById('nav-links');
+        const links = navLinks.querySelectorAll('a');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('nav-active');
+            hamburger.classList.toggle('is-active');
+        });
+
+        links.forEach(link => link.addEventListener('click', () => {
+            navLinks.classList.remove('nav-active');
+            hamburger.classList.remove('is-active');
+        }));
+
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const characters = '01';
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+
+        const drops = [];
+        for (let x = 0; x < columns; x++) {
+            drops[x] = 1;
+        }
+
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(12, 10, 26, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = 'rgba(106, 25, 255, 0.7)'; // Primary color with transparency
+            ctx.font = fontSize + 'px monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = characters.charAt(Math.floor(Math.random() * characters.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        setInterval(drawMatrix, 50);
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        // Header scroll effect
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Section fade-in on scroll
+        const sectionsToAnimate = document.querySelectorAll('section:not(.hero)');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Stop observing once it's visible
+                }
+            });
+        }, {
+            root: null, // relative to the viewport
+            threshold: 0.1 // trigger when 10% of the section is visible
+        });
+
+        sectionsToAnimate.forEach(section => observer.observe(section));
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top-btn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Service card glow effect
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+
+        // Web3Forms Contact Form Submission
+        const form = document.getElementById('contact-form');
+        const result = document.getElementById('form-result');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+            result.innerHTML = "Sending..."
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+                .then(async (response) => {
+                    let json = await response.json();
+                    if (response.status == 200) {
+                        result.innerHTML = "Form submitted successfully!";
+                    } else {
+                        console.log(response);
+                        result.innerHTML = json.message;
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                    result.innerHTML = "Something went wrong!";
+                })
+                .then(function () {
+                    form.reset();
+                    setTimeout(() => {
+                        result.innerHTML = '';
+                    }, 3000);
+                });
+        });
+
+        // Blog post accordion
+        document.querySelectorAll('.blog-post').forEach(post => {
+            post.addEventListener('click', () => {
+                post.classList.toggle('active');
+                const content = post.querySelector('.blog-post-content');
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    content.style.paddingTop = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    content.style.paddingTop = "1.5rem";
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>
